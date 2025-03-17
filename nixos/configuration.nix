@@ -86,7 +86,6 @@
 
   programs.hyprland = {
     enable = true;
-    xwayland.enable = true;
   };
 
   # Enable the X11 windowing system.

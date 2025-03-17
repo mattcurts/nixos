@@ -18,6 +18,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ./hyprland.nix
   ];
 
   nixpkgs = {
@@ -59,6 +60,7 @@
       pkgs.vscode-extensions.myriad-dreamin.tinymist
     ];
   };
+
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
