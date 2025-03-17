@@ -35,7 +35,6 @@
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
-
     ];
     # Configure your nixpkgs instance
     config = {
@@ -62,24 +61,23 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
-
   networking = {
-  networkmanager.enable = true;
-  hostName = "nixos";
+    networkmanager.enable = true;
+    hostName = "nixos";
   };
 
   users.users = {
     allen = {
       description = "allen";
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = ["networkmanager" "wheel"];
     };
   };
 
-    # Bootloader.
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
- 
+
   # Set your time zone.
   time.timeZone = "America/Vancouver";
 
@@ -97,15 +95,14 @@
     enable = true;
     # Configure keymap in X11
     xkb = {
-    layout = "us";
-    variant = "";
+      layout = "us";
+      variant = "";
     };
   };
 
-    # Enable the KDE Plasma Desktop Environment.
+  # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -124,7 +121,6 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

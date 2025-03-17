@@ -49,19 +49,16 @@
     username = "allen";
     homeDirectory = "/home/allen";
   };
-  
+
   programs.vscode = {
     enable = true;
     package = pkgs.vscode.fhs;
     extensions = [
-     
       pkgs.vscode-extensions.vscodevim.vim
       pkgs.vscode-extensions.bbenoist.nix
       pkgs.vscode-extensions.myriad-dreamin.tinymist
-      ];
+    ];
   };
-
-
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
@@ -81,7 +78,18 @@
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    extraConfig = {
+      user.name = "Matthew Curtis";
+      user.email = "Matthewcurtis@uvic.ca";
+      rerere.enable = true;
+      rerere.autoupdate = true;
+      rebase.autosquash = true;
+      commit.verbose = true;
+      pull.ff = "only";
+    };
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
