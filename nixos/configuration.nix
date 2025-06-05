@@ -104,6 +104,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+  services.tailscale.enable =true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
