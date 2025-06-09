@@ -74,6 +74,15 @@
     };
   };
 
+  
+  services.blueman.enable = true; # Optional GUI
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
